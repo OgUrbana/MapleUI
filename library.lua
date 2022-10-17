@@ -220,9 +220,9 @@ function WindowTable:CreateWindow(theme)
         local newPage = Instance.new("ScrollingFrame") -- New Page
         local elementListing = Instance.new("UIListLayout") -- New Page Element Listing
 
-        newPage.Name = "newPage"
+        newPage.Name = tabname
         newPage.Parent = pagesFolder
-        newPage.Active = true
+        newPage.Active = active
         newPage.BackgroundColor3 = Themes[theme].ContainerColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0

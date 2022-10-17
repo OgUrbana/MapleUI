@@ -196,13 +196,12 @@ function WindowTable:CreateWindow()
         -- Tab Button Properties
         TabButton.Name = "TabButton"
         TabButton.Parent = TabWidget
-        TabButton.BackgroundColor3 = Themes['Default'].PrimaryElementColor
+        TabButton.BackgroundColor3 = Themes['Default'].InactiveTab
         TabButton.Size = UDim2.new(0, 200, 0, 50)
         TabButton.Font = Enum.Font.Ubuntu
         TabButton.Text = "Visuals"
         TabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         TabButton.TextSize = 22.000
-        TabButton.AutoButtonColor = false
 
         -- Tab Button Corner Properties
         TabButtonCorner.CornerRadius = UDim.new(0, 15)

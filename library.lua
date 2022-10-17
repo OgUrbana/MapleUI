@@ -222,13 +222,14 @@ function WindowTable:CreateWindow(theme)
 
         newPage.Name = tabname
         newPage.Parent = pagesFolder
-        newPage.Active = active
+        newPage.Active = true
         newPage.BackgroundColor3 = Themes[theme].ContainerColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)
         newPage.ScrollBarThickness = 8
         newPage.ScrollBarImageColor3 = Themes[theme].PrimaryElementColor
+        newPage.Visible = active
     
         elementListing.Name = "elementListing"
         elementListing.Parent = newPage

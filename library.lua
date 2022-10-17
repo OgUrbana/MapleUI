@@ -202,6 +202,7 @@ function WindowTable:CreateWindow()
         TabButton.Text = "Visuals"
         TabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         TabButton.TextSize = 22.000
+        TabButton.AutoButtonColor = false
 
         -- Tab Button Corner Properties
         TabButtonCorner.CornerRadius = UDim.new(0, 15)
@@ -219,6 +220,7 @@ function WindowTable:CreateWindow()
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)
         newPage.ScrollBarThickness = 8
+        newPage.ScrollBarImageColor3 = Themes['Default'].PrimaryElementColor
     
         elementListing.Name = "elementListing"
         elementListing.Parent = newPage

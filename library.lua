@@ -17,7 +17,7 @@ local Themes = {
     }
 }
 
-function WindowTable:CreateWindow()
+function WindowTable:CreateWindow(theme)
     -- Instances:
 
     local Maple = Instance.new("ScreenGui")
@@ -47,12 +47,12 @@ function WindowTable:CreateWindow()
     --Properties:
 
     Maple.Name = "Maple"
-    Maple.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    Maple.Parent = game.CoreGui
     Maple.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     MainUI.Name = "MainUI"
     MainUI.Parent = Maple
-    MainUI.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+    MainUI.BackgroundColor3 = Themes[theme].BackgroundColor
     MainUI.Position = UDim2.new(0.49934727, 0, 0.101251423, 0)
     MainUI.Size = UDim2.new(0, 725, 0, 600)
 
@@ -62,7 +62,7 @@ function WindowTable:CreateWindow()
 
     LeftTab.Name = "LeftTab"
     LeftTab.Parent = MainUI
-    LeftTab.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+    LeftTab.BackgroundColor3 = Themes[theme].ContainerBackgroundColor
     LeftTab.Size = UDim2.new(0, 265, 0, 600)
 
     LeftTabCorner.CornerRadius = UDim.new(0, 15)
@@ -71,18 +71,18 @@ function WindowTable:CreateWindow()
 
     LogoName.Name = "LogoName"
     LogoName.Parent = LeftTab
-    LogoName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LogoName.BackgroundColor3 = Themes[theme].PrimaryTextColor
     LogoName.BackgroundTransparency = 1.000
     LogoName.Position = UDim2.new(0.310204089, 0, -0.0263157897, 0)
     LogoName.Size = UDim2.new(0, 112, 0, 50)
     LogoName.Font = Enum.Font.Ubuntu
     LogoName.Text = "Maple"
-    LogoName.TextColor3 = Color3.fromRGB(255, 109, 122)
+    LogoName.TextColor3 = Themes[theme].PrimaryElementColor
     LogoName.TextSize = 29.000
 
     WelcomeWidget.Name = "WelcomeWidget"
     WelcomeWidget.Parent = LeftTab
-    WelcomeWidget.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+    WelcomeWidget.BackgroundColor3 = Themes[theme].ContainerColor
     WelcomeWidget.Position = UDim2.new(0.00407792768, 0, 0.0631578937, 0)
     WelcomeWidget.Size = UDim2.new(0, 232, 0, 87)
 
@@ -92,7 +92,7 @@ function WindowTable:CreateWindow()
 
     UserImage.Name = "UserImage"
     UserImage.Parent = WelcomeWidget
-    UserImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    UserImage.BackgroundColor3 = Themes[theme].PrimaryTextColor
     UserImage.Size = UDim2.new(0, 50, 0, 50)
     UserImage.Image = "rbxassetid://11301508877"
 
@@ -108,19 +108,19 @@ function WindowTable:CreateWindow()
 
     WelcomeBack.Name = "WelcomeBack"
     WelcomeBack.Parent = WelcomeWidget
-    WelcomeBack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    WelcomeBack.BackgroundColor3 = Themes[theme].PrimaryTextColor
     WelcomeBack.BackgroundTransparency = 1.000
     WelcomeBack.Position = UDim2.new(0.33548969, 0, 0, 0)
     WelcomeBack.Size = UDim2.new(0, 134, 0, 27)
     WelcomeBack.Font = Enum.Font.Ubuntu
     WelcomeBack.Text = "Welcome Back"
-    WelcomeBack.TextColor3 = Color3.fromRGB(255, 255, 255)
+    WelcomeBack.TextColor3 = Themes[theme].PrimaryTextColor
     WelcomeBack.TextSize = 19.000
     WelcomeBack.TextXAlignment = Enum.TextXAlignment.Left
 
     UserName.Name = "UserName"
     UserName.Parent = WelcomeWidget
-    UserName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    UserName.BackgroundColor3 = Themes[theme].PrimaryElementColor
     UserName.BackgroundTransparency = 1.000
     UserName.Position = UDim2.new(0.33548969, 0, 0.333333343, 0)
     UserName.Size = UDim2.new(0, 134, 0, 27)
@@ -132,7 +132,7 @@ function WindowTable:CreateWindow()
 
     LogoImage.Name = "LogoImage"
     LogoImage.Parent = LeftTab
-    LogoImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LogoImage.BackgroundColor3 = Themes[theme].PrimaryElementColor
     LogoImage.BackgroundTransparency = 1.000
     LogoImage.Position = UDim2.new(0.22857143, 0, -0.00877192989, 0)
     LogoImage.Size = UDim2.new(0, 31, 0, 30)
@@ -147,7 +147,7 @@ function WindowTable:CreateWindow()
 
     TabWidget.Name = "TabWidget"
     TabWidget.Parent = LeftTab
-    TabWidget.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+    TabWidget.BackgroundColor3 = Themes[theme].ContainerColor
     TabWidget.Position = UDim2.new(-5.10380196e-05, 0, 0.239322543, 0)
     TabWidget.Size = UDim2.new(0, 232, 0, 379)
 
@@ -168,7 +168,7 @@ function WindowTable:CreateWindow()
 
     FooterWidget.Name = "FooterWidget"
     FooterWidget.Parent = LeftTab
-    FooterWidget.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+    FooterWidget.BackgroundColor3 = Themes[theme].ContainerColor
     FooterWidget.Position = UDim2.new(-5.16048312e-05, 0, 0.924534261, 0)
     FooterWidget.Size = UDim2.new(0, 232, 0, 44)
 
@@ -178,7 +178,7 @@ function WindowTable:CreateWindow()
 
     RightPages.Name = "RightPages"
     RightPages.Parent = MainUI
-    RightPages.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+    RightPages.BackgroundColor3 = Themes[theme].ContainerColor
     RightPages.Position = UDim2.new(0.386206895, 0, 0.0290475972, 0)
     RightPages.Size = UDim2.new(0, 430, 0, 567)
 
@@ -219,12 +219,12 @@ function WindowTable:CreateWindow()
         newPage.Name = "newPage"
         newPage.Parent = pagesFolder
         newPage.Active = true
-        newPage.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+        newPage.BackgroundColor3 = Themes[theme].ContainerColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)
         newPage.ScrollBarThickness = 8
-        newPage.ScrollBarImageColor3 = Themes['Default'].PrimaryElementColor
+        newPage.ScrollBarImageColor3 = Themes[theme].PrimaryElementColor
     
         elementListing.Name = "elementListing"
         elementListing.Parent = newPage
@@ -240,12 +240,12 @@ function WindowTable:CreateWindow()
             for i, v in next, TabWidget:GetChildren() do -- get all elements in frame
                 if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
                     game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                        BackgroundColor3 = Themes['Default'].InactiveTab
+                        BackgroundColor3 = Themes[theme].InactiveTab
                     }):Play()
                 end
             end
             game.TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                BackgroundColor3 = Themes['Default'].PrimaryElementColor
+                BackgroundColor3 = Themes[theme].PrimaryElementColor
             }):Play()
         end)
 

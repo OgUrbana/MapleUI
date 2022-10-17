@@ -202,6 +202,25 @@ function WindowTable:CreateWindow()
         TabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         TabButton.TextSize = 22.000
 
+        tabButton.MouseButton1Click:Connect(function()
+            for i, v in next, pagesFolder:GetChildren() do -- get all pages that we add
+                v.Visible = false -- make them invisible
+            end
+            newPage.Visible = true -- Make current page visible but not othrs
+
+            --Animations
+            for i, v in next, allTabs:GetChildren() do -- get all elements in frame
+                if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
+                    game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                        BackgroundColor3 = Themes['Default'].PrimaryElementColor
+                    }):Play()
+                end
+            end
+            game.TweenService:Create(tabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                BackgroundColor3 = InactiveTab
+            }):Play()
+        end)
+
         -- [UI Corner] Tab Button
         UICorner_6.CornerRadius = UDim.new(0, 15)
         UICorner_6.Parent = TabButton
@@ -221,27 +240,10 @@ function WindowTable:CreateWindow()
         elementListing.Parent = newPage
         elementListing.SortOrder = Enum.SortOrder.LayoutOrder
 
-        tabButton.MouseButton1Click:Connect(function()
-            for i, v in next, pagesFolder:GetChildren() do -- get all pages that we add
-                v.Visible = false -- make them invisible
-            end
-            newPage.Visible = true -- Make current page visible but not othrs
-
-            --Animations
-            for i, v in next, allTabs:GetChildren() do -- get all elements in frame
-                if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
-                    game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                        BackgroundColor3 = Themes['Default'].PrimaryElementColor
-                    }):Play()
-                end
-            end
-            game.TweenService:Create(tabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                BackgroundColor3 = InactiveTab
-            }):Play()
-        end)
     end
+
     return TabHandler
 end
 
-    return WindowTable
+return WindowTable
 

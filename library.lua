@@ -43,7 +43,7 @@ function WindowTable:CreateWindow()
     --Properties:
 
     Maple.Name = "Maple"
-    Maple.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    Maple.Parent = game.CoreGui
     Maple.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     MainUI.Name = "MainUI"

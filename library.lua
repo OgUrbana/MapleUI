@@ -196,7 +196,7 @@ function WindowTable:CreateWindow()
         -- Tab Button Properties
         TabButton.Name = "TabButton"
         TabButton.Parent = TabWidget
-        TabButton.BackgroundColor3 = Themes['Default'].InactiveTab
+        TabButton.BackgroundColor3 = Themes['Default'].PrimaryElementColor
         TabButton.Size = UDim2.new(0, 200, 0, 50)
         TabButton.Font = Enum.Font.Ubuntu
         TabButton.Text = tabname

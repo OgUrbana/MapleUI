@@ -193,7 +193,7 @@ function WindowTable:CreateWindow(theme)
 
     local TabHandler = {}
 
-    function TabHandler:CreateTab(tabname)
+    function TabHandler:CreateTab(tabname, active)
         tabname = tabname or "New Tab"
         local TabButton = Instance.new("TextButton") -- Tab Button
         local TabButtonCorner = Instance.new("UICorner") -- Tab Button Corner
@@ -201,7 +201,11 @@ function WindowTable:CreateWindow(theme)
         -- Tab Button Properties
         TabButton.Name = "TabButton"
         TabButton.Parent = TabWidget
-        TabButton.BackgroundColor3 = Themes['Default'].PrimaryElementColor
+        if active then
+            TabButton.BackgroundColor3 = Themes['Default'].PrimaryElementColor            
+        else
+            TabButton.BackgroundColor3 = Themes['Default'].InactiveTab
+        end
         TabButton.Size = UDim2.new(0, 200, 0, 50)
         TabButton.Font = Enum.Font.Ubuntu
         TabButton.Text = tabname

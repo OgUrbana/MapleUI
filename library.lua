@@ -177,7 +177,7 @@ function WindowTable:CreateWindow()
         -- Tab Widget
         TabWidget.Name = "TabWidget"
         TabWidget.Parent = LeftTab
-        TabWidget.BackgroundColor3 = ContainerColor
+        TabWidget.BackgroundColor3 = Themes['Default'].ContainerColor
         TabWidget.Position = UDim2.new(-5.10380196e-05, 0, 0.239322543, 0)
         TabWidget.Size = UDim2.new(0, 232, 0, 379)
 
@@ -195,7 +195,7 @@ function WindowTable:CreateWindow()
         -- Tab Button
         TabButton.Name = "TabButton"
         TabButton.Parent = TabWidget
-        TabButton.BackgroundColor3 = PrimaryElementColor
+        TabButton.BackgroundColor3 = Themes['Default'].PrimaryElementColor
         TabButton.Size = UDim2.new(0, 200, 0, 50)
         TabButton.Font = Enum.Font.Ubuntu
         TabButton.Text = tabname
@@ -210,7 +210,7 @@ function WindowTable:CreateWindow()
         newPage.Name = "newPage"
         newPage.Parent = RightPages
         newPage.Active = true
-        newPage.BackgroundColor3 = ContainerColor
+        newPage.BackgroundColor3 = Themes['Default'].ContainerColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)
@@ -231,7 +231,7 @@ function WindowTable:CreateWindow()
             for i, v in next, allTabs:GetChildren() do -- get all elements in frame
                 if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
                     game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                        BackgroundColor3 = PrimaryElementColor
+                        BackgroundColor3 = Themes['Default'].PrimaryElementColor
                     }):Play()
                 end
             end

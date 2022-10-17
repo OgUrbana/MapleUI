@@ -38,6 +38,7 @@ function WindowTable:CreateWindow()
     local TabWidget = Instance.new("Frame")
     local TabWidgetCorner = Instance.new("UICorner")
     local TabWidgetPadding = Instance.new("UIPadding") 
+    local TabWidgetLayout = Instance.new("UIListLayout")
     local FooterWidget = Instance.new("Frame")
     local FooterCorner = Instance.new("UICorner")
     local RightPages = Instance.new("Frame")
@@ -161,6 +162,10 @@ function WindowTable:CreateWindow()
     TabWidgetPadding.PaddingRight = UDim.new(0, 15)
     TabWidgetPadding.PaddingTop = UDim.new(0, 15)
 
+    TabWidgetLayout.Name = "TabWidgetLayout"
+    TabWidgetLayout.Parent = TabWidget
+    TabWidgetLayout.Padding = UDim.new(0, 10)
+
     FooterWidget.Name = "FooterWidget"
     FooterWidget.Parent = LeftTab
     FooterWidget.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
@@ -212,7 +217,7 @@ function WindowTable:CreateWindow()
         local elementListing = Instance.new("UIListLayout") -- New Page Element Listing
 
         newPage.Name = "newPage"
-        newPage.Parent = RightPages
+        newPage.Parent = pagesFolder
         newPage.Active = true
         newPage.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
         newPage.BackgroundTransparency = 1.000

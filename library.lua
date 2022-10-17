@@ -1,21 +1,5 @@
 local WindowTable = {}
-local Themes = {
-    ['Default'] = {
-        BackgroundColor = Color3.fromRGB(59, 59, 59),
-        ContainerColor = Color3.fromRGB(46, 46, 46),
-        PrimaryTextColor = Color3.fromRGB(255, 255, 255),
-        ContainerBackgroundColor = Color3.fromRGB(52, 52, 52),
-        SecondaryTextColor = Color3.fromRGB(255, 109, 122),
-        UIStrokeColor = Color3.fromRGB(60, 60, 60),
-        PrimaryElementColor = Color3.fromRGB(255, 109, 122),
-        SecondaryElementColor = Color3.fromRGB(0,0,0),
-        ScrollBarColor = Color3.fromRGB(121, 50, 66),
-        PromptColor = Color3.fromRGB(46, 46, 46),
-        NotificationColor = Color3.fromRGB(25, 25, 25),
-        NotificationUIStrokeColor = Color3.fromRGB(125, 125, 125),
-        InactiveTab = Color3.fromRGB(58, 58, 58)
-    }
-}
+
 
 function WindowTable:CreateWindow()
     

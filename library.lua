@@ -240,7 +240,6 @@ function WindowTable:CreateWindow()
             }):Play()
         end)
     end
-    
+    return WindowTable
 end
 
-return WindowTable

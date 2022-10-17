@@ -202,7 +202,7 @@ function WindowTable:CreateWindow()
         TabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         TabButton.TextSize = 22.000
 
-        tabButton.MouseButton1Click:Connect(function()
+        TabButton.MouseButton1Click:Connect(function()
             for i, v in next, pagesFolder:GetChildren() do -- get all pages that we add
                 v.Visible = false -- make them invisible
             end
@@ -216,7 +216,7 @@ function WindowTable:CreateWindow()
                     }):Play()
                 end
             end
-            game.TweenService:Create(tabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+            game.TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
                 BackgroundColor3 = InactiveTab
             }):Play()
         end)

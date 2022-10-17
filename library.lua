@@ -163,7 +163,7 @@ function WindowTable:CreateWindow()
 
     local TabHandler = {}
 
-    function TabHandler:CreateTab(tabhname)
+    function TabHandler:CreateTab(tabname)
         tabname = tabname or "New Tab"
         local TabWidget = Instance.new("Frame") -- Widget for Tab
         local UICorner_5 = Instance.new("UICorner") -- UI Corner for tab
@@ -209,7 +209,7 @@ function WindowTable:CreateWindow()
             newPage.Visible = true -- Make current page visible but not othrs
 
             --Animations
-            for i, v in next, allTabs:GetChildren() do -- get all elements in frame
+            for i, v in next, TabWidget:GetChildren() do -- get all elements in frame
                 if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
                     game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
                         BackgroundColor3 = Themes['Default'].PrimaryElementColor
@@ -217,7 +217,7 @@ function WindowTable:CreateWindow()
                 end
             end
             game.TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                BackgroundColor3 = InactiveTab
+                BackgroundColor3 = Themes['Default'].InactiveTab
             }):Play()
         end)
 

@@ -234,33 +234,14 @@ function WindowTable:CreateWindow()
             for i, v in next, TabWidget:GetChildren() do -- get all elements in frame
                 if v:IsA("TextButton") then -- Check if its a text button because not possible to anime UIListLayout
                     game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                        BackgroundColor3 = Themes['Default'].PrimaryElementColor
+                        BackgroundColor3 = Themes['Default'].InactiveTab
                     }):Play()
                 end
             end
             game.TweenService:Create(TabButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                BackgroundColor3 = Themes['Default'].InactiveTab
+                BackgroundColor3 = Themes['Default'].PrimaryElementColor
             }):Play()
         end)
-
-        -- -- [UI Corner] Tab Button
-        -- UICorner_6.CornerRadius = UDim.new(0, 15)
-        -- UICorner_6.Parent = TabButton
-
-        -- -- New Page
-        -- newPage.Name = "newPage"
-        -- newPage.Parent = RightPages
-        -- newPage.Active = true
-        -- newPage.BackgroundColor3 = Themes['Default'].ContainerColor
-        -- newPage.BackgroundTransparency = 1.000
-        -- newPage.BorderSizePixel = 0
-        -- newPage.Size = UDim2.new(0, 430, 0, 565)
-        -- newPage.ScrollBarThickness = 8
-
-        -- -- [Element Listing] New Page
-        -- elementListing.Name = "elementListing"
-        -- elementListing.Parent = newPage
-        -- elementListing.SortOrder = Enum.SortOrder.LayoutOrder
 
     end
 

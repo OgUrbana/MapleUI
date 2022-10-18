@@ -226,7 +226,7 @@ function WindowTable:CreateWindow(theme)
         newPage.Name = tabname
         newPage.Parent = pagesFolder
         newPage.Active = true
-        newPage.BackgroundColor3 = Themes[theme].ContainerColor
+        newPage.BackgroundColor3 = Themes[theme].ContainerBackgroundColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)

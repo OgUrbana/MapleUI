@@ -13,7 +13,8 @@ local Themes = {
         PromptColor = Color3.fromRGB(46, 46, 46),
         NotificationColor = Color3.fromRGB(25, 25, 25),
         NotificationUIStrokeColor = Color3.fromRGB(125, 125, 125),
-        InactiveTab = Color3.fromRGB(58, 58, 58)
+        InactiveTab = Color3.fromRGB(58, 58, 58),
+        ElementBox = Color3.fromRGB(38, 38, 38)
     }
 }
 
@@ -193,6 +194,8 @@ function WindowTable:CreateWindow(theme)
 
     local TabHandler = {}
 
+    -- Creating Tabs
+
     function TabHandler:CreateTab(tabname, active)
         tabname = tabname or "New Tab"
         local TabButton = Instance.new("TextButton") -- Tab Button
@@ -254,7 +257,75 @@ function WindowTable:CreateWindow(theme)
             }):Play()
         end)
 
+        local ContainerHandler = {}
+
+        function ContainerHandler:CreateContainer(containerTitle)
+            local Container = Instance.new("Frame")
+            local ContainerCorner = Instance.new("UICorner")
+            local divider = Instance.new("Frame")
+            local ContainerLabel = Instance.new("TextLabel")
+            local ElementBox = Instance.new("Frame")
+            local ElementCorner = Instance.new("UICorner")
+            local ElementBoxLayout = Instance.new("UIListLayout")
+            local ElementBoxPadding = Instance.new("UIPadding")
+            
+            Container.Name = "Container"
+            Container.Parent = game.StarterGui.Maple.MainUI.RightPages.newPage
+            Container.BackgroundColor3 = Themes[theme].ContainerColor
+            Container.Position = UDim2.new(0, 0, 5.40134124e-08, 0)
+            Container.Size = UDim2.new(0, 413, 0, 316)
+
+            ContainerCorner.CornerRadius = UDim.new(0, 15)
+            ContainerCorner.Name = "ContainerCorner"
+            ContainerCorner.Parent = Container
+
+            divider.Name = "divider"
+            divider.Parent = Container
+            divider.BackgroundColor3 = Themes[theme].ElementBox
+            divider.BorderSizePixel = 0
+            divider.Position = UDim2.new(0, 0, 0.103074089, 0)
+            divider.Size = UDim2.new(0, 413, 0, 19)
+            divider.ZIndex = 0
+
+            ContainerLabel.Name = "ContainerLabel"
+            ContainerLabel.Parent = Container
+            ContainerLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            ContainerLabel.BackgroundTransparency = 1.010
+            ContainerLabel.Position = UDim2.new(0.256658584, 0, 0.00632911408, 0)
+            ContainerLabel.Size = UDim2.new(0, 200, 0, 30)
+            ContainerLabel.Font = Enum.Font.Ubuntu
+            ContainerLabel.TextColor3 = Color3.fromRGB(255, 109, 122)
+            ContainerLabel.TextSize = 23.000
+            ContainerLabel.Text = containerTitle
+
+            ElementBox.Name = "ElementBox"
+            ElementBox.Parent = Container
+            ElementBox.BackgroundColor3 = Themes[theme].ElementBox
+            ElementBox.Position = UDim2.new(0, 0, 0.114343382, 0)
+            ElementBox.Size = UDim2.new(0, 413, 0, 278)
+            ElementBox.ZIndex = 10
+
+            ElementCorner.CornerRadius = UDim.new(0, 15)
+            ElementCorner.Name = "ElementCorner"
+            ElementCorner.Parent = ElementBox
+
+            ElementBoxLayout.Name = "ElementBoxLayout"
+            ElementBoxLayout.Parent = ElementBox
+            ElementBoxLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+            ElementBoxPadding.Name = "ElementBoxPadding"
+            ElementBoxPadding.Parent = ElementBox
+            ElementBoxPadding.PaddingBottom = UDim.new(0, 5)
+            ElementBoxPadding.PaddingLeft = UDim.new(0, 5)
+            ElementBoxPadding.PaddingRight = UDim.new(0, 5)
+            ElementBoxPadding.PaddingTop = UDim.new(0, 5)
+            
+        end
+
+        return ContainerHandler
+
     end
+
 
     return TabHandler
 end

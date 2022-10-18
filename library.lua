@@ -227,7 +227,7 @@ function WindowTable:CreateWindow(theme)
         newPage.Parent = pagesFolder
         newPage.Active = true
         newPage.BackgroundColor3 = Themes[theme].ContainerColor
-        newPage.BackgroundTransparency = 1.000
+        newPage.BackgroundTransparency = 1
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)
         newPage.ScrollBarThickness = 8

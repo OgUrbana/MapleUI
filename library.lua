@@ -182,6 +182,7 @@ function WindowTable:CreateWindow(theme)
     RightPages.BackgroundColor3 = Themes[theme].ContainerColor
     RightPages.Position = UDim2.new(0.386206895, 0, 0.0290475972, 0)
     RightPages.Size = UDim2.new(0, 430, 0, 567)
+    RightPages.BackgroundTransparency = 1.00
 
     RightPagesCorner.CornerRadius = UDim.new(0, 15)
     RightPagesCorner.Name = "RightPagesCorner"
@@ -226,7 +227,7 @@ function WindowTable:CreateWindow(theme)
         newPage.Name = tabname
         newPage.Parent = pagesFolder
         newPage.Active = true
-        newPage.BackgroundColor3 =  Color3.fromRGB(255,255,255)
+        newPage.BackgroundColor3 = Themes[theme].ContainerColor
         newPage.BackgroundTransparency = 1.000
         newPage.BorderSizePixel = 0
         newPage.Size = UDim2.new(0, 430, 0, 565)

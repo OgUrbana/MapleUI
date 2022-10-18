@@ -270,7 +270,7 @@ function WindowTable:CreateWindow(theme)
             local ElementBoxPadding = Instance.new("UIPadding")
             
             Container.Name = "Container"
-            Container.Parent = game.StarterGui.Maple.MainUI.RightPages.newPage
+            Container.Parent = newPage
             Container.BackgroundColor3 = Themes[theme].ContainerColor
             Container.Position = UDim2.new(0, 0, 5.40134124e-08, 0)
             Container.Size = UDim2.new(0, 413, 0, 316)
